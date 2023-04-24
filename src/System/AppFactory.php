@@ -11,6 +11,8 @@ class AppFactory implements FactoryInterface {
     public function __invoke(ServiceManager $serviceManager): App
     {
         $config = $serviceManager->get('config');
-        return new App($config);
+        $router = $serviceManager->get(Router::class);
+
+        return new App($config, $router);
     }
 }

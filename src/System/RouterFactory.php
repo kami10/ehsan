@@ -5,8 +5,9 @@ namespace App\System;
 class RouterFactory implements \App\Interfaces\FactoryInterface
 {
 
-    public function __invoke(ServiceManager $serviceManager): mixed
+    public function __invoke(ServiceManager $serviceManager): Router
     {
-        // TODO: Implement __invoke() method.
+        $routes = $serviceManager->get('config')['routes'];
+        return new Router($routes, $serviceManager);
     }
 }

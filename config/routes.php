@@ -1,6 +1,8 @@
 <?php
 
 
-return [
-    '' => \App\Controller\HomeController::class,
+return [ 'routes' => [
+    '/' => \App\Controller\HomeController::class,
+]
+
 ];
